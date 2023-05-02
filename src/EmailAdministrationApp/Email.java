@@ -8,8 +8,10 @@ public class Email {
     private String password;
     private int defaultPasswordLength;
     private String department;
+    private String email;
     private int mailBoxCapacity;
     private String alternateEmail;
+    private String companySuffixe;
 
     //Constructor
     public Email(String firstname, String lastname) {
@@ -21,12 +23,19 @@ public class Email {
         this.department = this.setDepartment();
         //System.out.println("Department : " + department);
 
-        //Password length
+        //Initialize password length
         this.defaultPasswordLength = 8;
 
         //Call a method the returns a random password
         this.password = this.randomPassword(defaultPasswordLength);
         System.out.println("Your password is : " + this.password);
+
+        //Initialize company suffixe
+        this.companySuffixe = "company.com";
+
+        //Combine elements to generate email
+        this.email = this.firstname.toLowerCase() + "." + this.lastname.toLowerCase() + "@" + this.department + "." + this.companySuffixe;
+        System.out.println("Your email is : " + this.email);
     }
 
     //Method that ask for the department
