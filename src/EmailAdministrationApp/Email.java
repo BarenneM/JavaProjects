@@ -36,6 +36,9 @@ public class Email {
         //Combine elements to generate email
         this.email = this.firstname.toLowerCase() + "." + this.lastname.toLowerCase() + "@" + this.department + "." + this.companySuffixe;
         System.out.println("Your email is : " + this.email);
+
+        //Initializa mailBoxCapacity
+        this.mailBoxCapacity = 500;
     }
 
     //Method that ask for the department
@@ -63,9 +66,18 @@ public class Email {
     }
 
     //Set the mailBoxCapacity
+    public void setMailBoxCapacity(int mailBoxCapacity) {
+        this.mailBoxCapacity = mailBoxCapacity;
+    }
 
     //Set the alternateEmail
+    public void setAlternateEmail(String alternateEmail) {
+        this.alternateEmail = alternateEmail;
+    }
 
     //Change password
+    public void changePassword(String password) {
+        this.password = password;
+    }
 
 }
