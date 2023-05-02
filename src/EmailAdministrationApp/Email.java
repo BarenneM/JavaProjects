@@ -17,11 +17,9 @@ public class Email {
     public Email(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
-        //System.out.println("firstname : " + firstname + " lastename : " + lastname);
 
         //Call a method asking for the department
         this.department = this.setDepartment();
-        //System.out.println("Department : " + department);
 
         //Initialize password length
         this.defaultPasswordLength = 8;
@@ -35,7 +33,6 @@ public class Email {
 
         //Combine elements to generate email
         this.email = this.firstname.toLowerCase() + "." + this.lastname.toLowerCase() + "@" + this.department + "." + this.companySuffixe;
-        System.out.println("Your email is : " + this.email);
 
         //Initializa mailBoxCapacity
         this.mailBoxCapacity = 500;
@@ -80,4 +77,21 @@ public class Email {
         this.password = password;
     }
 
+    public int getMailBoxCapacity() {
+        return mailBoxCapacity;
+    }
+
+    public String getAlternateEmail() {
+        return alternateEmail;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void showInfo() {
+        System.out.println("NAME : " + this.firstname + " " + this.lastname +
+                "\nCOMPANY EMAIL : " + this.email +
+                "\nMAILBOX CAPACITY : " + this.mailBoxCapacity + "mb");
+    }
 }
